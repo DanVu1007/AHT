@@ -1,0 +1,21 @@
+<?php
+
+/** @var \AHT\ShopByBrand\Block\Frontend\Brand\BrandInProduct $block */
+$brand = $block->showBrandByProductID();
+?>
+
+<style>
+
+</style>
+
+<?php if($block->isEnable()): ?>
+<div class="brand">
+    <?php if ($block->isShowImage() || $block->isShowAll() && $brand->getImage()) : ?>
+        <div class="img"><img src="<?php echo $brand->getImage(); ?>" alt=""></div>
+    <?php endif ?>
+
+    <?php if ($block->isShowName() || $block->isShowAll() && $brand->getName()) : ?>
+        <div class="name"><?php echo $brand->getName(); ?></div>
+    <?php endif ?>
+</div>
+<?php endif; ?>
